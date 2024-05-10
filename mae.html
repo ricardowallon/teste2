@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+    .question {
+        margin-bottom: 20px;
+    }
+    .options button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+    /* Estilos para imagens */
+    #page3 img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto; /* Centralizar as imagens */
+    }
+</style>
+</head>
+<body>
+<div id="page1">
+    <div class="question">
+        <h2>Responda o desafio corretamente e ganhe um presente 🎁🎁</h2>
+        <p>Dona Valdênia, qual foi o melhor genro que a senhora já teve?</p>
+    </div>
+    <div class="options">
+        <button onclick="showPage('page2')">Letra A - Ricardo Wallon</button>
+        <button onclick="showPage('page2')">Letra B - Ricardo Wallon</button>
+        <button onclick="showPage('page2')">Letra C - Ricardo Wallon</button>
+        <button onclick="showPage('page2')">Letra D - Todas as opções acima</button>
+    </div>
+</div>
+
+<div id="page2" style="display: none;">
+    <div class="question">
+        <h2>PARABÉNS!!! Você avançou de etapa. Responda as próximas perguntas e vá para a última etapa.</h2>
+        <p>O que a senhora gostaria de ganhar no dia das mães?</p>
+    </div>
+    <div class="options">
+        <button onclick="showPage('page3')">Letra A - Um presente misterioso</button>
+        <button onclick="showPage('page3')">Letra B - Um genro</button>
+    </div>
+</div>
+
+<div id="page3" style="display: none;">
+    <h2>PARABÉNS!!! Você ganhou seu prêmio. Tire um print da tela e me envie.</h2>
+    <img src="https://via.placeholder.com/400x200" alt="Foto 1">
+    <img src="https://via.placeholder.com/400x200" alt="Foto 2">
+    <img src="https://via.placeholder.com/400x200" alt="Foto 3">
+</div>
+
+<script>
+    function showPage(pageId) {
+        var pages = document.querySelectorAll('[id^="page"]');
+        pages.forEach(function(page) {
+            page.style.display = 'none';
+        });
+        
+        var nextPage = document.getElementById(pageId);
+        nextPage.style.display = 'block';
+    }
+</script>
+</body>
+</html>
